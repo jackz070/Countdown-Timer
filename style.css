@@ -1,0 +1,160 @@
+html {
+  box-sizing: border-box;
+  font-size: 12px;
+  background: #8e24aa;
+  background: linear-gradient(45deg, #ff019a 0%, #9b00e8 50%, #290cff 100%);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  text-align: center;
+  font-family: "Azeret Mono", monospace;
+}
+
+.display__time-left {
+  font-size: 12rem;
+  margin: 0;
+  color: white;
+
+  animation: pulsate 0.21s ease-in-out infinite alternate;
+}
+
+.timer {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.1s ease-in-out;
+  padding-top: 15vh;
+}
+
+.timer__controls {
+  max-width: 40%;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20%;
+}
+
+.timer__controls > * {
+  max-width: 200px;
+  margin: 0.25rem 0;
+}
+
+.timer__controls form {
+  flex: 1;
+  display: flex;
+}
+
+.timer__controls input {
+  flex: 1;
+  border: 0;
+  padding: 1rem;
+  color: white;
+  font-size: 1rem;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.1);
+  border: 0.1rem solid #fff;
+  border-radius: 2rem;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
+    0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
+  padding: 1.4rem;
+  font-family: "Azeret Mono", monospace;
+  font-weight: 100;
+  margin: 0.35rem;
+  transition: all 0.1s ease-in-out;
+}
+
+.timer__controls input::placeholder {
+  color: white;
+}
+
+.timer_control:focus {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0.4rem #fff, 0 0 0.4rem #fff, 0 0 4rem #bc13fe,
+    0 0 1rem #bc13fe, 0 0 3rem #bc13fe, inset 0 0 2rem #bc13fe;
+}
+
+.timer__button {
+  cursor: pointer;
+  color: white;
+  font-size: 1rem;
+  text-transform: uppercase;
+  background: rgba(0, 0, 0, 0.1);
+  border: 0.1rem solid #fff;
+  border-radius: 2rem;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
+    0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
+  padding: 1.4rem;
+  font-family: "Azeret Mono", monospace;
+  font-weight: 100;
+  margin: 0.35rem;
+  transition: all 0.1s ease-in-out;
+}
+
+.timer__button:hover,
+.timer__button:focus {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0.4rem #fff, 0 0 0.4rem #fff, 0 0 4rem #bc13fe,
+    0 0 1rem #bc13fe, 0 0 3rem #bc13fe, inset 0 0 2rem #bc13fe;
+}
+
+.display {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.display__end-time {
+  font-size: 2rem;
+  color: white;
+  animation: pulsate 0.21s ease-in-out infinite alternate;
+}
+
+@keyframes pulsate {
+  100% {
+    /* Larger blur radius */
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #f09,
+      0 0 80px #f09, 0 0 90px #f09, 0 0 100px #f09, 0 0 150px #f09;
+  }
+  0% {
+    /* A slightly smaller blur radius */
+    text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px #fff, 0 0 38px #f09,
+      0 0 73px #f09, 0 0 80px #f09, 0 0 94px #f09, 0 0 140px #f09;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .timer__controls {
+    min-width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30%;
+  }
+
+  .timer__button,
+  .timer__controls input {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .display__time-left {
+    font-size: 8rem;
+  }
+  .display__end-time {
+    font-size: 1.75rem;
+  }
+}
